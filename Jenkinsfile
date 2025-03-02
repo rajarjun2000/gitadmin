@@ -1,39 +1,32 @@
 pipeline {
     agent any
     
-    environment {
-        // Optional: Define environment variables here if needed
-    }
-    
     stages {
         stage('Checkout') {
             steps {
                 // Checkout the code from the Git repository
-                git url: 'https://github.com/rajarjun2000/gitadmin.git', branch: 'master'  // Update if necessary
+                git 'https://github.com/rajarjun2000/gitadmin.git'  // Replace with your repository URL
             }
         }
 
-
-        stage('Run Tests') {
+        
+        stage('Run Test') {
             steps {
-                // Run the test.py file using Python
-                sh 'python3 test.py'  // Adjust the path to test.py if it's in a subfolder
+                // Execute the test.py file
+                sh 'python3 test.py'  // Adjust the path to test.py if needed
             }
         }
     }
-    
+
     post {
         always {
-            // Optional: Cleanup actions
-            echo 'Cleaning up...'
+            echo 'Pipeline completed.'
         }
-
         success {
-            echo 'Test executed successfully!'
+            echo 'Test passed!'
         }
-
         failure {
-            echo 'Test execution failed.'
+            echo 'Test failed.'
         }
     }
 }
