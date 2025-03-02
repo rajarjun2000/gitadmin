@@ -8,8 +8,8 @@ pipeline {
 		}
         stage ('hello') {
 		 steps {
-		   sh 'test'
+		   sh 'test.py'
 		   }
 		  }
 		 }
-       }
+               }
