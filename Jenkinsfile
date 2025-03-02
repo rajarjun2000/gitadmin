@@ -13,17 +13,11 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Install Python dependencies (assuming requirements.txt exists)
-                sh 'pip install -r requirements.txt'
-            }
-        }
 
         stage('Run Tests') {
             steps {
                 // Run the test.py file using Python
-                sh 'python test.py'  // Adjust the path to test.py if it's in a subfolder
+                sh 'python3 test.py'  // Adjust the path to test.py if it's in a subfolder
             }
         }
     }
@@ -43,4 +37,3 @@ pipeline {
         }
     }
 }
-
