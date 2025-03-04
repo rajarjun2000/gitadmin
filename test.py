@@ -76,7 +76,7 @@ def check_files_in_directory(directory_path):
 
 if __name__ == "__main__":
     # Replace with the path to the directory you want to monitor
-    directory_path = '/root/test/test1'
+    directory_path = '/var/vinta/test1'
 
     # Check files in the directory
     check_files_in_directory(directory_path)	
